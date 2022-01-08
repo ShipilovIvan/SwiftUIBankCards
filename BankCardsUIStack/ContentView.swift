@@ -88,7 +88,7 @@ struct ContentView: View {
                 .frame(width: showCard ? 375.0 : 340.0, height: 220.0)
                 .background(Color.blue)
                 .clipShape(RoundedRectangle(cornerRadius: showCard ? 24 : 16, style: .continuous))
-                .shadow(color: .accentColor, radius: 80, x: 24, y: 24)
+                .shadow(color: .accentColor.opacity(0.15), radius: 24, x: 24, y: 12)
                 .offset(x: viewState.width, y:viewState.height)
                 .offset(y: showCard ? -40 : 0)
                 .blendMode(.normal)
@@ -247,9 +247,10 @@ struct TitleForCertificatesView: View {
             
             VStack {
                 Text("Bank")
-                    .modifier(PageTitleFontModifier(size: 56))
+                    .modifier(PageTitleFontModifier(size: 48))
                 Text("Cards")
-                    .modifier(PageTitleFontModifier(size: 56))
+                    .modifier(PageTitleFontModifier(size: 64))
+                    .padding(.top, -44)
                 Spacer()
             }
             .padding()
